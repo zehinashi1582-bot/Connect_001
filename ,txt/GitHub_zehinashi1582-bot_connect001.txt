@@ -1,0 +1,38 @@
+GitHub_zehinashi1582-bot_connect001
+
+環境準備
+会社PCのVS Codeで、個人GitHubアカウント(zehinashi1582-bot)にサインイン
+資格情報マネージャーに残っていた古いGitHub認証情報を削除
+Personal Access Token(PAT)を発行し、認証に使用
+git cloneでリポジトリConnect_001を取得
+Connect_001フォルダをLarn_001直下に移動
+
+基本確認
+git --version → 2.53.0
+git config --list → user.name(足立賢)、user.email済み設定確認
+remote.origin.urlがConnect_001に接続済みであることを確認
+
+通常のコミット・プッシュ(mainブランチ)
+README.mdに「test001」を追記
+git add README.md
+git commit -m "READMEにtest001を追記"
+git push origin main → GitHubに反映成功
+
+ブランチ作成からプルリクエストへ
+git branch branch001 → ローカルにブランチ作成
+git switch branch001 → ブランチ切り替え
+git push -u origin branch001 → リモートにも作成、追跡設定完了
+001.txtを新規作成し「001」と入力
+git add 001.txt
+git commit -m "branch001ブランチを作ってテキストを追加"
+git push origin branch001 → GitHubのbranch001に反映成功
+GitHub上で「Compare & pull request」ボタンをクリック(次はこの続き)
+
+ブランチ作成(git branch / git switch)
+リモートへの追跡設定付きプッシュ(git push -u)
+ファイル編集 → add → commit → push
+GitHub上でプルリクエスト作成
+マージ(Confirm merge)
+リモートブランチ削除(Delete branch)
+ローカルを最新化(git switch main → git pull)
+ローカルブランチ削除(git branch -d)
